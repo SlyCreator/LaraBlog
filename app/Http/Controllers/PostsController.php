@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -18,9 +19,18 @@ class PostsController extends Controller
         //return view('index',compact('posts'));
         $posts = Post::all();
         return view('index',['posts'=>$posts]);
+       /* foreach($posts as $post)
+            {
+               return response()->json(['category_name',$this->getCategoryName($post->category_id)]) ;
+            }
+        */
     }
  
-
+    public static function getCategoryName($id)
+    {
+        $category_name= Category::where('id',$id)->first();
+        return $category_name->category_name;
+    }
 
     /**
      * Show the form for creating a new resource.

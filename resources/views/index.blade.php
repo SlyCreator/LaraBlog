@@ -64,14 +64,14 @@
 								<div class="post post-row">
 									<a class="post-img" href="/posts/{{$post->id}}"><img src="./img/{{$post->image}}" alt=""></a>
 									<div class="post-body">
-										<div class="post-meta">
-																		
-											<a class="post-category cat-2" href="/categories/{{$post->category_id}}">{{$post->category->id}}</a>
+										<div class="post-meta">						
+											<a class="post-category cat-2" href="/categories/{{$post->category_id}}">\App\Http\Controller\PostsController::getCategoryName($post->category_id)</a>
+
 										
-											<span class="post-date">March 27, 2018</span>
+											<span class="post-date">{{$post->created_at}}</span>
 											<span class="post-date">{{$post->author_id}}</span>
 										</div>
-									<h3 class="post-title"><a href="/posts/{{$post->id}}">{{$post->Post_title}}</a></h3>
+									<h3 class="post-title"><a href="/posts/{{$post->id}}">{{$post->post_title}}</a></h3>
 										<p>{{$post->body}}</p>
 									</div>
 								</div>
