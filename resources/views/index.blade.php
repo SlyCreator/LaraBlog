@@ -1,3 +1,4 @@
+<?php use \App\Http\Controllers\PostsController; ?>
 @extends('layouts.layout')
 
 @section('content')
@@ -65,7 +66,7 @@
 									<a class="post-img" href="/posts/{{$post->id}}"><img src="./img/{{$post->image}}" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">						
-											<a class="post-category cat-2" href="/categories/{{$post->category_id}}">\App\Http\Controller\PostsController::getCategoryName($post->category_id)</a>
+											<a class="post-category cat-2" href="/categories/{{$post->category_id}}">{{PostsController::getCategoryName($post->category_id)}}</a>
 
 										
 											<span class="post-date">{{$post->created_at}}</span>
