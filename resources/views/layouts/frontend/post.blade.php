@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.frontend.layout')
 
 @section('content')
 	
@@ -90,11 +90,11 @@
 						</div>
 						<!-- /author -->
 
-						@include('layouts.comment')
+						@include('layouts.frontend.comment')
 					</div>
 					<!-- /Post content -->
 
-					@include('layouts.sidebar')
+					@include('layouts.frontend.sidebar')
 				</div>
 				<!-- /row -->
 			</div>

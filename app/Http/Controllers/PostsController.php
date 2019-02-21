@@ -15,10 +15,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-          //$posts = Post::latest()->paginate(5);
-        //return view('index',compact('posts'));
-        $posts = Post::all();
-        return view('index',['posts'=>$posts]);
+          $posts = Post::latest()->paginate(5);
+          return view('layouts.frontend.index',compact('posts'));
        /* foreach($posts as $post)
             {
                return response()->json(['category_name',$this->getCategoryName($post->category_id)]) ;
@@ -39,7 +37,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
@@ -50,7 +48,15 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'post_title'=>'required',
+            'body'=>'required',
+            'author_id'=>'required',
+            'image'=>'required',
+            'category_id'=>'required'
+            ]);
+        $post = Post::create($request->all());
+        return response()->json($post,201);
     }
 
     /**
@@ -85,7 +91,8 @@ class PostsController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->update($request->all());
+        return response()->json($post,200);
     }
 
     /**
@@ -96,6 +103,6 @@ class PostsController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        
     }
 }

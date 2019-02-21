@@ -24,6 +24,6 @@
 	<body>
 		<!-- Header -->
 		<header id="header">
-			@include('layouts.nav')
+			@include('layouts.frontend.nav')
 		</header>
 		<!-- /Header -->

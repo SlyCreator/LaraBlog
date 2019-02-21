@@ -1,5 +1,5 @@
 <?php use \App\Http\Controllers\PostsController; ?>
-@extends('layouts.layout')
+@extends('layouts.frontend.layout')
 
 @section('content')
 		<!-- section for Trend-->
@@ -81,16 +81,17 @@
 
 							
 							@endforeach
-							
+							{{ $posts->links()}}
+										<!--{!! $posts->links() !!}-->
 							<div class="col-md-12">
 								<div class="section-row">
-									<button class="primary-button center-block">Load More</button>
+									<button class="primary-button center-block" >Load More</button>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					@include('layouts.sidebar')
+					@include('layouts.frontend.sidebar')
 				</div>
 				<!-- /row -->
 			</div>
