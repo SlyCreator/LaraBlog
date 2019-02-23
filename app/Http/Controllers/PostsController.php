@@ -17,6 +17,9 @@ class PostsController extends Controller
     {
           $posts = Post::latest()->paginate(5);
           return view('layouts.frontend.index',compact('posts'));
+
+          // return response()->json(Post::get(),200);
+
        /* foreach($posts as $post)
             {
                return response()->json(['category_name',$this->getCategoryName($post->category_id)]) ;
@@ -69,6 +72,8 @@ class PostsController extends Controller
     {
         $post = Post:: find($post->id);
         return view('post',['post'=>$post]);
+        
+        //return response()->json(Post::find($id),200);
     }
 
     /**
