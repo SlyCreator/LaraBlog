@@ -11,7 +11,7 @@
 					<!-- post -->
 					<div class="col-md-6">
 						<div class="post post-thumb">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
+							<a class="post-img" href="blog-post.html"><img src="./img/9.png" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category cat-2" href="category.html">JavaScript</a>
@@ -26,7 +26,7 @@
 					<!-- post -->
 					<div class="col-md-6">
 						<div class="post post-thumb">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
+							<a class="post-img" href="blog-post.html"><img src="./img/7.png" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category cat-3" href="category.html">Jquery</a>

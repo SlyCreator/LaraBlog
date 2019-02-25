@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Category;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -28,7 +29,7 @@ class CategoriesTableSeeder extends Seeder
            
         ]);
         Category::create([
-            'category_name' => 'BockChain',
+            'category_name' => 'BlockChain',
            
         ]);
         Category::create([

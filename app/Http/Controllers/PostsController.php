@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Post;
+use App\Tag;
+
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -16,7 +18,10 @@ class PostsController extends Controller
     public function index()
     {
           $posts = Post::latest()->paginate(5);
-          return view('layouts.frontend.index',compact('posts'));
+          $side_posts = $this->sidebar(5);
+          $categories = $this->getCategoryNames();
+          $tags =$this->getTags();
+          return view('layouts.frontend.index',compact('posts','side_posts','categories','tags'));
 
           // return response()->json(Post::get(),200);
 
@@ -109,5 +114,23 @@ class PostsController extends Controller
     public function destroy(Post $post)
     {
         
+    }
+
+    public function sidebar($amount)
+    {
+        $side_posts = Post::orderBy('post_title','desc')->take($amount)->get();
+        
+        return $side_posts;
+      
+    }
+    public function getCategoryNames()
+    {
+        $categories = Category::all();
+        return $categories;
+    }
+    public function getTags()
+    {
+        $tags = Tag::all();
+        return $tags;
     }
 }
