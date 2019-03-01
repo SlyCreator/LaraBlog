@@ -15,6 +15,7 @@ Route::get('/','PostsController@index');
 //Route::resource('/posts','PostsController');
 
 
+Route::get('/dashboard','AdminController@index');
 Route::get('/author/createpost','PostsController@create')->name('displayCreatePostview');
 Route::get('/post/store','PostsController@store')->name('createPost');
 
@@ -29,10 +30,10 @@ Route::get('/single',function()
     });
 
 
-    Route::get('/dashboard',function()
-    {
-        return view('layouts.admin.admin');
-    });
+    // Route::get('/dashboard',function()
+    // {
+    //     return view('layouts.admin.admin');
+    // });
 
 Route::get('/db',function(){
     $posts=DB::table('posts')->get();
